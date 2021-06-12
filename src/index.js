@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore, combineReducers, applyMiddleware} from 'redux';
-import {Provider} from 'react-redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 import './index.css';
@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const feedback = (state = {}, action) => {
 
-    switch(action.type){
+    switch (action.type) {
         case 'FEELING':
             console.log('log payload in reducer feedback', action.payload);
             state.feeling = action.payload;
@@ -24,10 +24,9 @@ const feedback = (state = {}, action) => {
         default:
             return state;
     }
-    // return [...state, action.payload];
 }
 
-
+// creating store
 const store = createStore(
     combineReducers({
         feedback
@@ -37,8 +36,10 @@ const store = createStore(
 
 
 ReactDOM.render(
-    <Provider store={store}>
-<App />
-</Provider>,
- document.getElementById('root'));
+    <React.StrictMode>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root'));
 registerServiceWorker();
