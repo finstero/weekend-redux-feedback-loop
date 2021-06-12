@@ -18,12 +18,12 @@ function Feeling() {
     // state for radio button value
     const [value, setValue] = useState('4');
 
-    // onchange handler to set state of value to radio button selected
+    // onchange handler sets state of value to radio button selected
     const handleChange = (event) => {
         setValue(event.target.value);
     }
 
-    // stores radio button selection in reducer. moves to next page, understanding page
+    // stores radio button selection in feedback reducer as object property. moves to next page, understanding page
     const nextPage = (event) => {
         event.preventDefault();
         console.log('value in nextpage', value);

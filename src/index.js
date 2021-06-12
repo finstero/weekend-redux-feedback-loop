@@ -23,6 +23,9 @@ const feedback = (state = {}, action) => {
         case 'SUPPORT':
             state.support = action.payload;
             return state;
+        case 'COMMENTS':
+            state.comments = action.payload;
+            return state;
         default:
             return state;
     }
