@@ -11,7 +11,9 @@ function ThankYou () {
 
     const history = useHistory();
 
-    // as is, doesn't require clearing reducer, because user cannot reach review page without going through other pages
+    // as is, doesn't require clearing reducer, because user cannot reach review page without going through other pages,
+    // which each force a submit of the required inputs. because inputs are stored as objects, it is essentially a built in
+    // clear.
     const returnHome = () => {
         history.push('/');
     }

@@ -35,11 +35,11 @@ function Comments() {
         <>
             <h2>Any comments?</h2>
             <form onSubmit={nextPage}>
-            <TextField 
-                variant="outlined" 
-                onChange={handleChange}
-            />
-            <Button variant="outlined" type="submit">done</Button>
+                <TextField
+                    variant="outlined"
+                    onChange={handleChange}
+                />
+                <Button variant="outlined" type="submit">done</Button>
             </form>
         </>
     )
