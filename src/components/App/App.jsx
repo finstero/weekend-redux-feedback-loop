@@ -4,10 +4,9 @@ import './App.css';
 
 // router for different pages
 import { Route, HashRouter as Router } from "react-router-dom";
-import { useHistory } from 'react-router-dom';
 
 // material ui
-import Button from '@material-ui/core/Button';
+
 
 // components
 import Feeling from '../Feeling/Feeling';

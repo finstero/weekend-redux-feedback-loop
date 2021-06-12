@@ -7,7 +7,7 @@ function Home() {
     const history = useHistory();
 
     const nextPage = () => {
-      history.push('/feeling')
+        history.push('/feeling')
     }
 
     return (
