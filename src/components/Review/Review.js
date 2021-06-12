@@ -4,8 +4,9 @@ import axios from 'axios';
 
 // material ui
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
-function Review () {
+function Review() {
 
     const history = useHistory();
 
@@ -21,13 +22,17 @@ function Review () {
             url: '/feedback',
             data: feedback
         })
-        .then(response => {
-            console.log('response in post', response);
-            history.push('/thankyou');
-        })
-        .catch(err => {
-            console.log('error in post', err);
-        })  
+            .then(response => {
+                console.log('response in post', response);
+                history.push('/thankyou');
+            })
+            .catch(err => {
+                console.log('error in post', err);
+            })
+    }
+
+    const goBack = () => {
+        history.push('/comments');
     }
 
     // displays all previously input feedback. stored in reducers only until submit button clicked
@@ -38,7 +43,14 @@ function Review () {
             <h3>Understanding: {feedback.understanding}</h3>
             <h3>Support: {feedback.support}</h3>
             <h3>Comments: {feedback.comments}</h3>
-            <Button variant="outlined" onClick={handleSubmit} >Submit</Button>
+            <Grid container justify="center">
+                <Grid item>
+                    <Button onClick={goBack} variant="outlined">Back</Button>
+                </Grid>
+                <Grid item>
+                    <Button variant="outlined" onClick={handleSubmit} >Submit</Button>
+                </Grid>
+            </Grid>
         </>
     )
 }
