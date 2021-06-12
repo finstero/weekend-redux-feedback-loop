@@ -32,7 +32,7 @@ function Comments() {
     }
 
     const goBack = () => {
-        history.push('/');
+        history.push('/support');
     }
 
     // displays textfield for comments input and button for done/move to next page

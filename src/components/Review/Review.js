@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import swal from 'sweetalert';
+
 
 // material ui
 import Button from '@material-ui/core/Button';
@@ -27,6 +29,7 @@ function Review() {
                 history.push('/thankyou');
             })
             .catch(err => {
+                swal("Oh no!", "Please go back and make sure you have rated your feeling, understanding, and support levels.", "error");
                 console.log('error in post', err);
             })
     }
