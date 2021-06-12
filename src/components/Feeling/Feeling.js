@@ -29,7 +29,7 @@ function Feeling() {
             payload: value
         })
 
-        history.push('/submission')
+        history.push('/understanding')
     }
 
     return (

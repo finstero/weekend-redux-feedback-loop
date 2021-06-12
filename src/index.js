@@ -8,12 +8,13 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-const feedback = (state = [], action) => {
+const feedback = (state = {}, action) => {
 
     switch(action.type){
         case 'FEELING':
             console.log('log payload in reducer feedback', action.payload);
-            return [...state, action.payload];
+            state.feeling = action.payload
+            return state;
         default:
             return state;
     }
