@@ -8,12 +8,18 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-
+const feedback = (state = [], action) => {
+    if (action.type === 'FEELING') {
+        console.log('log payload', action.payload);
+        return action.payload
+    }
+    return state;
+}
 
 
 const store = createStore(
     combineReducers({
-
+        feedback
     }),
     applyMiddleware(logger)
 )
