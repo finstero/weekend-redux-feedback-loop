@@ -28,7 +28,7 @@ function Understanding () {
             payload: value
         })
 
-        history.push('/review')
+        history.push('/support')
     }
 
     return(
@@ -36,7 +36,7 @@ function Understanding () {
             <h2>How well are you understanding the content?</h2>
             <form onSubmit={nextPage}>
                 <FormControl>
-                    <RadioGroup row required aria-label="understanding" name="understanding" value={value} onChange={handleChange}>
+                    <RadioGroup row aria-label="understanding" name="understanding" value={value} onChange={handleChange}>
                         <FormControlLabel
                             value="1"
                             control={<Radio color="primary" />}

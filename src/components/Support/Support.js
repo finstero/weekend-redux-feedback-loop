@@ -8,9 +8,8 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-// import FormLabel from '@material-ui/core/FormLabel';
 
-function Feeling() {
+function Supported () {
 
     const history = useHistory();
     const dispatch = useDispatch();
@@ -25,23 +24,23 @@ function Feeling() {
         event.preventDefault();
         console.log('value in nextpage', value);
         dispatch({
-            type: 'FEELING',
+            type: 'SUPPORT',
             payload: value
         })
 
-        history.push('/understanding')
+        history.push('/review')
     }
 
     return (
         <>
-            <h2>How are you feeling today?</h2>
+            <h2>How well are you being supported?</h2>
             <form onSubmit={nextPage}>
                 <FormControl>
-                    <RadioGroup row aria-label="feeling" name="feeling" value={value} onChange={handleChange}>
+                    <RadioGroup row aria-label="support" name="support" value={value} onChange={handleChange}>
                         <FormControlLabel
                             value="1"
                             control={<Radio color="primary" />}
-                            label="Dismal (1)"
+                            label="Help me (1)"
                             labelPlacement="top"
                         />
                         <FormControlLabel
@@ -71,7 +70,7 @@ function Feeling() {
                         <FormControlLabel
                             value="6"
                             control={<Radio color="primary" />}
-                            label="Resplendent (6)"
+                            label="Totally supported (6)"
                             labelPlacement="top"
                         />
                     </RadioGroup>
@@ -80,7 +79,6 @@ function Feeling() {
             </form>
         </>
     )
-
 }
 
-export default Feeling;
+export default Supported;

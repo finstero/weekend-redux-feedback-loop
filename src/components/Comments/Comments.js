@@ -1,6 +1,8 @@
-
+import { useHistory } from 'react-router-dom';
 
 function Comments() {
+
+    const history = useHistory();
 
     return (
         <>

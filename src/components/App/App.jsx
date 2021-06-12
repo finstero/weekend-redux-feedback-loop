@@ -12,9 +12,10 @@ import { Route, HashRouter as Router } from "react-router-dom";
 import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
-import Supported from '../Supported/Supported';
+import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import ThankYou from '../ThankYou/ThankYou';
 
 function App() {
 
@@ -35,8 +36,8 @@ function App() {
                 <Route path='/understanding'>
                     <Understanding />
                 </Route>
-                <Route path='/supported'>
-                    <Supported />
+                <Route path='/support'>
+                    <Support />
                 </Route>
                 <Route path='/comments'>
                     <Comments />
@@ -44,6 +45,9 @@ function App() {
                 <Route path='/review'>
                     <Review />
                     <h2>Review Your Feedback</h2>
+                </Route>
+                <Route path='/thankyou'>
+                    <ThankYou />
                 </Route>
             </div>
         </Router>
