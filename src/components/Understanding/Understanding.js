@@ -14,12 +14,15 @@ function Understanding () {
     const history = useHistory();
     const dispatch = useDispatch();
 
+    // state for radio button value
     const [value, setValue] = useState('4');
 
+    // onchange handler to set state of value to radio button selected
     const handleChange = (event) => {
         setValue(event.target.value);
     }
 
+    // stores radio button selection in reducer. moves to next page, support page
     const nextPage = (event) => {
         event.preventDefault();
         console.log('value in nextpage', value);
@@ -31,6 +34,7 @@ function Understanding () {
         history.push('/support')
     }
 
+    // displays radio button form with 1-6 options and button for submit/move to next page
     return(
         <>
             <h2>How well are you understanding the content?</h2>

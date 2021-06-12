@@ -8,6 +8,8 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
+// feedback reducer storing all feedback input in different routes as feedback properties
+// state formatted as an object for ease
 const feedback = (state = {}, action) => {
 
     switch (action.type) {

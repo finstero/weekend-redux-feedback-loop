@@ -44,7 +44,6 @@ function App() {
                 </Route>
                 <Route path='/review'>
                     <Review />
-                    <h2>Review Your Feedback</h2>
                 </Route>
                 <Route path='/thankyou'>
                     <ThankYou />

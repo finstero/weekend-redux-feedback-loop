@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
 
@@ -11,6 +11,7 @@ function ThankYou () {
 
     const history = useHistory();
 
+    // as is, doesn't require clearing reducer, because user cannot reach review page without going through other pages
     const returnHome = () => {
         history.push('/');
     }
