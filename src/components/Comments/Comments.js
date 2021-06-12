@@ -4,6 +4,7 @@ function Comments() {
 
     const history = useHistory();
 
+    
     return (
         <>
             <h2>Any comments?</h2>

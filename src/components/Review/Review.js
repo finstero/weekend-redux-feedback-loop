@@ -36,7 +36,7 @@ function Review () {
             <h2>Review Your Feedback</h2>
             <h3>Feeling: {feedback.feeling}</h3>
             <h3>Understanding: {feedback.understanding}</h3>
-            <h3>Supported: {feedback.support}</h3>
+            <h3>Support: {feedback.support}</h3>
             <h3>Comments: {feedback.comments}</h3>
             <Button variant="outlined" onClick={handleSubmit} >Submit</Button>
             <h2>Thank you!</h2>

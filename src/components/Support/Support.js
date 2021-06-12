@@ -31,7 +31,7 @@ function Supported () {
             payload: value
         })
 
-        history.push('/review')
+        history.push('/comments')
     }
 
     // displays radio button form with 1-6 options and button for submit/move to next page
