@@ -9,11 +9,15 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
 const feedback = (state = [], action) => {
-    if (action.type === 'FEELING') {
-        console.log('log payload', action.payload);
-        return action.payload
+
+    switch(action.type){
+        case 'FEELING':
+            console.log('log payload in reducer feedback', action.payload);
+            return [...state, action.payload];
+        default:
+            return state;
     }
-    return state;
+    // return [...state, action.payload];
 }
 
 
