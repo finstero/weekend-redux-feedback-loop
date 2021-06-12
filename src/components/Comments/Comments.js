@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 function Comments() {
 
@@ -30,6 +31,10 @@ function Comments() {
         history.push('/review')
     }
 
+    const goBack = () => {
+        history.push('/');
+    }
+
     // displays textfield for comments input and button for done/move to next page
     return (
         <>
@@ -39,7 +44,14 @@ function Comments() {
                     variant="outlined"
                     onChange={handleChange}
                 />
-                <Button variant="outlined" type="submit">done</Button>
+                 <Grid container justify="center">
+                        <Grid item>
+                            <Button onClick={goBack} variant="outlined">Back</Button>
+                        </Grid>
+                        <Grid item>
+                            <Button type="submit" variant="outlined">Done</Button>
+                        </Grid>
+                    </Grid>
             </form>
         </>
     )

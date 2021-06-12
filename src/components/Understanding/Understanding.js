@@ -8,6 +8,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import Grid from '@material-ui/core/Grid';
 
 function Understanding () {
 
@@ -32,6 +33,10 @@ function Understanding () {
         })
 
         history.push('/support')
+    }
+
+    const goBack = () => {
+        history.push('/feeling');
     }
 
     // displays radio button form with 1-6 options and button for submit/move to next page
@@ -78,7 +83,14 @@ function Understanding () {
                             labelPlacement="top"
                         />
                     </RadioGroup>
-                    <Button type="submit" variant="outlined">Next</Button>
+                    <Grid container justify="center">
+                        <Grid item>
+                            <Button onClick={goBack} variant="outlined">Back</Button>
+                        </Grid>
+                        <Grid item>
+                            <Button type="submit" variant="outlined">Next</Button>
+                        </Grid>
+                    </Grid>
                 </FormControl>
             </form>
             
