@@ -14,8 +14,8 @@ function Submission () {
     return (
         <>
             <h2>Thank you!</h2>
-            <h3>Feeling: </h3>
-            <h3>Understanding: </h3>
+            <h3>Feeling: {feedback.feeling}</h3>
+            <h3>Understanding: {feedback.understanding}</h3>
             <Button variant="outlined" onClick={handleSubmit} >Submit</Button>
         </>
     )

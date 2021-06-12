@@ -13,7 +13,10 @@ const feedback = (state = {}, action) => {
     switch(action.type){
         case 'FEELING':
             console.log('log payload in reducer feedback', action.payload);
-            state.feeling = action.payload
+            state.feeling = action.payload;
+            return state;
+        case 'UNDERSTANDING':
+            state.understanding = action.payload;
             return state;
         default:
             return state;
