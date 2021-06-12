@@ -12,6 +12,7 @@ import { Route, HashRouter as Router } from "react-router-dom";
 import Feeling from '../Feeling/Feeling';
 import Home from '../Home/Home';
 import Understanding from '../Understanding/Understanding';
+import Submission from '../Submission/Submission';
 
 function App() {
 
@@ -42,7 +43,7 @@ function App() {
                     <h2>Review Your Feedback</h2>
                 </Route>
                 <Route path='/submission'>
-                    <h2>Thank you!</h2>
+                    <Submission />
                 </Route>
             </div>
         </Router>
