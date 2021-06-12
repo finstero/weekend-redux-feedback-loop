@@ -28,7 +28,7 @@ function Understanding () {
             payload: value
         })
 
-        history.push('/submission')
+        history.push('/review')
     }
 
     return(

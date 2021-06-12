@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 // material ui
 import Button from '@material-ui/core/Button';
 
-function Submission () {
+function Review () {
 
     const feedback = useSelector(store => store.feedback);
 
@@ -21,4 +21,4 @@ function Submission () {
     )
 }
 
-export default Submission;
+export default Review;
