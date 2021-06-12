@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 // material ui
 import Button from '@material-ui/core/Button';
@@ -12,7 +13,19 @@ function Review () {
 
     const handleSubmit = () => {
         console.log('feedback in submit', feedback);
-        history.push('/thankyou');
+
+        axios({
+            method: 'POST',
+            url: ,
+            data: feedback
+        })
+        .then(response => {
+            console.log('response in post', response);
+            history.push('/thankyou');
+        })
+        .catch(err => {
+            console.log('error in post', err);
+        })
         
     }
 
