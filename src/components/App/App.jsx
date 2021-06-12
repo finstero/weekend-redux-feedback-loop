@@ -4,14 +4,18 @@ import './App.css';
 
 // router for different pages
 import { Route, HashRouter as Router } from "react-router-dom";
-
-// componenets
+import { useHistory } from 'react-router-dom';
 
 // material ui
 import Button from '@material-ui/core/Button';
 
+// components
+import Feeling from '../Feeling/Feeling';
+import Home from '../Home/Home';
 
 function App() {
+
+
 
   return (
     <Router>
@@ -21,11 +25,10 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
         <Route path='/' exact>
-          <h2>Ready?</h2>
-          <Button variant="outlined">Start</Button>
+          <Home />
         </Route>
         <Route path='/feeling'>
-          <h2>How are you feeling today?</h2>
+          <Feeling />
         </Route>
         <Route path='/understanding'>
           <h2>How well are you understanding the content?</h2>
@@ -35,6 +38,12 @@ function App() {
         </Route>
         <Route path='/comments'>
           <h2>Any comments?</h2>
+        </Route>
+        <Route path='/review'>
+          <h2>Review Your Feedback</h2>
+        </Route>
+        <Route path='/submitted'>
+          <h2>Thank you!</h2>
         </Route>
       </div>
     </Router>
