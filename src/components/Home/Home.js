@@ -16,9 +16,9 @@ function Home() {
     return (
         <>
             <h2>Ready?</h2>
-            <p>This survey will ask how you are feeling, how well you are understanding the material, and
-             how well supported you feel. Please respond by choosing a number that best matches your experience TODAY.
-             The higher the number, the more positive the respone.</p>
+            <p>This survey will ask how you are feeling, how well you are understanding the material,
+             how well supported you feel, and if you have any additional comments. Please respond by choosing a number that best matches your experience TODAY.
+             The higher the number, the more positive the response.</p>
             <Button onClick={nextPage} variant="outlined">Start</Button>
         </>
     )
