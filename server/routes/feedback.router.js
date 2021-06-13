@@ -2,11 +2,14 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
-// post route for feedback
+// post route for individually input feedback
 router.post('/', (req, res) => {
+
     let newFeedback = req.body;
     console.log('adding more feedback', newFeedback);
 
+    // data auto inputs by database
+    // all below are required other than comments
     let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
                     VALUES ($1, $2, $3, $4)`;
         pool.query(queryText, [newFeedback.feeling, newFeedback.understanding, newFeedback.support, newFeedback.comments])
@@ -19,10 +22,10 @@ router.post('/', (req, res) => {
         })
 });
 
-// get route for feedback
+// get route for ALL feedback in db
 router.get('/', (req, res) => {
     console.log('in router get');
-    pool.query('SELECT * from "feedback" ORDER BY "date";')
+    pool.query('SELECT * from "feedback" ORDER BY "date" DESC;')
     .then(result => {
         res.send(result.rows);
     })

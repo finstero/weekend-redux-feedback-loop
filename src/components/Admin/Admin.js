@@ -16,18 +16,21 @@ import axios from 'axios';
 function Admin() {
 
     const dispatch = useDispatch();
-    // const allFeedback = useSelector(store => store.allFeedback);
 
+    // on page load grabs all feedback from database and dispatches to allFeedback reducer
     useEffect( () => {
         getFeedback();
     }, []);
 
+    // get route for all feedback
     const getFeedback = () => {
         axios({
             method: 'GET',
             url: '/feedback'
         })
         .then(response => {
+
+            // sends all data from db to allFeedback reducer
             dispatch({
                 type: 'ALL_FEEDBACK',
                 payload: response.data
@@ -39,6 +42,7 @@ function Admin() {
         })
     }
 
+    // displays table with allFeedback data from db displayed by AdminItem component
     return (
         <>
             <h2>All Feedback</h2>
@@ -49,16 +53,12 @@ function Admin() {
                         <TableCell>Understanding</TableCell>
                         <TableCell>Support</TableCell>
                         <TableCell>Comments</TableCell>
+                        <TableCell>Date</TableCell>
                         <TableCell>Delete</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     <AdminItem />
-                    {/* {allFeedback.map((feedback, i) => (
-                        <TableRow key={i}>
-                            <TableCell>{feedback.feeling}</TableCell>
-                        </TableRow>
-                    ))} */}
                 </TableBody>
             </Table>
         </>
