@@ -31,6 +31,10 @@ const feedback = (state = {}, action) => {
     }
 }
 
+const allFeedback = (state = [], action) => {
+    
+}
+
 // creating store
 const store = createStore(
     combineReducers({

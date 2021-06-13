@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 
 // material ui
@@ -13,6 +13,8 @@ import axios from 'axios';
 
 function Admin() {
 
+    const dispatch = useDispatch();
+    const allFeedback = useSelector(store => store.feedback);
 
     useEffect( () => {
         getFeedback();
@@ -24,7 +26,7 @@ function Admin() {
             url: '/feedback'
         })
         .then(response => {
-            dispatchEvent({
+            dispatch({
                 type: 'ALL_FEEDBACK',
                 payload: response.data
             })
@@ -48,7 +50,11 @@ function Admin() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-
+                    {allFeedback.map((feedback, i) => (
+                        <TableRow key={i}>
+                            <TableCell>{feedback.feeling}</TableCell>
+                        </TableRow>
+                    ))}
                 </TableBody>
             </Table>
         </>

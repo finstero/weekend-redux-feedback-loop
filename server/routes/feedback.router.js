@@ -19,4 +19,18 @@ router.post('/', (req, res) => {
         })
 });
 
+// get route for feedback
+router.get('/', (req, res) => {
+    console.log('in router get');
+    pool.query('SELECT * from "feedback" ORDER BY "date";')
+    .then(result => {
+        res.send(result.rows);
+    })
+    .catch(err => {
+        console.log('error in get server', err);
+        res.sendStatus(500);
+    })
+});
+
+
 module.exports = router;
