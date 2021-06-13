@@ -13,20 +13,36 @@ function AdminItem({getFeedback}) {
     const allFeedback = useSelector(store => store.allFeedback);
 
     // delete route for individual feedback delete
+    // inside sweet alert asking for confirmation of delete
     const handleDelete = (id) => {
         console.log('delete', id);
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this feedback.",
+            icon: "warning",
+            buttons: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("This feedack has been deleted!", {
+                    icon: "success",
+                });
 
-        axios({
-            method: 'DELETE',
-            url: `/feedback/${id}`
-        })
-        .then(response => {
-            // console.log('deleted feedback');
-            // reload page/ re do get. passed using props.
-            getFeedback();
-        })
-        .catch(err => {
-            console.log('error in delete client', err);
+                // delete route
+                axios({
+                    method: 'DELETE',
+                    url: `/feedback/${id}`
+                })
+                .then(response => {
+                    console.log('deleted feedback');
+                    
+                    // reload page/ re do get. passed using props.
+                    getFeedback();
+                })
+                .catch(err => {
+                    console.log('error in delete client', err);
+                })
+            }
         })
     }
 

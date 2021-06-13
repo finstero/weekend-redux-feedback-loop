@@ -1,8 +1,20 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Feedback Input
 
 ## Description
+
+This is a multi page application made using:
+
+Javascript,
+Node.js,
+React,
+React - Redux,
+Express,
+Postico,
+PostgresSQL,
+SweetAlert,
+
+and Material-UI for styling.
+
 
 Your project description goes here. What problem did you solve? How did you solve it?
 
