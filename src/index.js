@@ -8,8 +8,9 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-// feedback reducer storing all feedback input in different routes as feedback properties
-// state formatted as an object for ease
+// feedback reducer storing individual set of feedback input (from different routes) as feedback properties
+// state formatted as an object for ease. radio button captures last choice as object property, so there is
+// no need to clear properties.
 const feedback = (state = {}, action) => {
 
     switch (action.type) {
@@ -31,7 +32,7 @@ const feedback = (state = {}, action) => {
     }
 }
 
-
+// reducer that stores ALL feedback from database
 const allFeedback = (state = [], action) => {
 
     switch(action.type) {

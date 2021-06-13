@@ -40,7 +40,7 @@ function AdminItem({getFeedback}) {
                     <TableCell>{feedback.understanding}</TableCell>
                     <TableCell>{feedback.support}</TableCell>
                     <TableCell>{feedback.comments}</TableCell>
-                    <TableCell>{feedback.date}</TableCell>
+                    <TableCell>{feedback.date.substring(0, 10)}</TableCell>
                     <TableCell><IconButton onClick={handleDelete.bind(this, feedback.id)} aria-label="delete">
                         <DeleteIcon />
                     </IconButton></TableCell>

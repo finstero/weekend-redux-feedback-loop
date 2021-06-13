@@ -31,10 +31,10 @@ function Understanding () {
             type: 'UNDERSTANDING',
             payload: value
         })
-
         history.push('/support')
     }
 
+    // goes to previous page on back button click
     const goBack = () => {
         history.push('/feeling');
     }

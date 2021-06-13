@@ -34,6 +34,7 @@ function Feeling() {
         history.push('/understanding');
     }
 
+    // goes to previous page on back button click
     const goBack = () => {
         history.push('/');
     }

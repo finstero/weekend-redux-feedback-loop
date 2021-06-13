@@ -31,6 +31,7 @@ function Comments() {
         history.push('/review')
     }
 
+    // goes to previous page on back button click
     const goBack = () => {
         history.push('/support');
     }
