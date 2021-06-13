@@ -58,7 +58,7 @@ function Admin() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    <AdminItem />
+                    <AdminItem getFeedback={getFeedback}/>
                 </TableBody>
             </Table>
         </>

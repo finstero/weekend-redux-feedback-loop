@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 // material ui
 import TableRow from "@material-ui/core/TableRow";
@@ -6,28 +7,31 @@ import TableCell from "@material-ui/core/TableCell";
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-function AdminItem() {
+function AdminItem({getFeedback}) {
 
     // grabbing all feedback from database stored in allFeedback reducer
     const allFeedback = useSelector(store => store.allFeedback);
 
-    const handleDelete = () => {
-        console.log('delete');
-        axios.delete({
+    // delete route for individual feedback delete
+    const handleDelete = (id) => {
+        console.log('delete', id);
+
+        axios({
             method: 'DELETE',
-            url: '/feedback'
+            url: `/feedback/${id}`
         })
         .then(response => {
-            console.log('deleted feedback');
-            // delete from reducer and/or reload? do i need to reload? probs
+            // console.log('deleted feedback');
+            // reload page/ re do get. passed using props.
+            getFeedback();
         })
         .catch(err => {
-            console.log('error in delete ', err);
+            console.log('error in delete client', err);
         })
     }
 
-
     // displays all feedback properties from all feedback currently in db/reducer
+    // and delete button to delete feedback from database
     return (
         <>
             {allFeedback.map((feedback, i) => (
@@ -37,7 +41,7 @@ function AdminItem() {
                     <TableCell>{feedback.support}</TableCell>
                     <TableCell>{feedback.comments}</TableCell>
                     <TableCell>{feedback.date}</TableCell>
-                    <TableCell><IconButton onClick={handleDelete} aria-label="delete">
+                    <TableCell><IconButton onClick={handleDelete.bind(this, feedback.id)} aria-label="delete">
                         <DeleteIcon />
                     </IconButton></TableCell>
                 </TableRow>
