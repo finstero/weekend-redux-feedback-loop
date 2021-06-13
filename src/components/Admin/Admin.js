@@ -1,6 +1,8 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
+import AdminItem from '../AdminItem/AdminItem';
+
 
 // material ui
 import Table from "@material-ui/core/Table";
@@ -14,7 +16,7 @@ import axios from 'axios';
 function Admin() {
 
     const dispatch = useDispatch();
-    const allFeedback = useSelector(store => store.feedback);
+    // const allFeedback = useSelector(store => store.allFeedback);
 
     useEffect( () => {
         getFeedback();
@@ -30,6 +32,7 @@ function Admin() {
                 type: 'ALL_FEEDBACK',
                 payload: response.data
             })
+            console.log('array of feedback objects', response);
         })
         .catch(err => {
             console.log('error in get', err);
@@ -50,11 +53,12 @@ function Admin() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {allFeedback.map((feedback, i) => (
+                    <AdminItem />
+                    {/* {allFeedback.map((feedback, i) => (
                         <TableRow key={i}>
                             <TableCell>{feedback.feeling}</TableCell>
                         </TableRow>
-                    ))}
+                    ))} */}
                 </TableBody>
             </Table>
         </>

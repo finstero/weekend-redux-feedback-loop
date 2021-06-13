@@ -31,14 +31,24 @@ const feedback = (state = {}, action) => {
     }
 }
 
+
 const allFeedback = (state = [], action) => {
-    
+
+    switch(action.type) {
+        case 'ALL_FEEDBACK':
+            console.log('payload for allFeedback, array of objects', action.payload);
+            state = action.payload;
+            return state;
+        default:
+            return state;
+    }
 }
 
 // creating store
 const store = createStore(
     combineReducers({
-        feedback
+        feedback,
+        allFeedback
     }),
     applyMiddleware(logger)
 )
