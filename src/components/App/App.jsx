@@ -16,6 +16,7 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import ThankYou from '../ThankYou/ThankYou';
+import Admin from '../Admin/Admin';
 
 function App() {
 
@@ -50,6 +51,9 @@ function App() {
                 </Route>
                 <Route path='/thankyou'>
                     <ThankYou />
+                </Route>
+                <Route path='/admin'>
+                    <Admin />
                 </Route>
             </div>
         </Router>
